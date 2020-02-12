@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react';
+import { string } from 'prop-types';
 
-function Hello() {
-  return (
-    <div className="Hello">
-      <span>Hello</span>
-    </div>
-  );
-  // return React.createElement('div', { className: 'Hello' },
-  //   React.createElement('span', {}, 'Hello')
-  // );
+function Hello({ name }) {
+  return <div className="Hello">Hello {name}</div>;
 }
+
+Hello.propTypes = {
+  name: string.isRequired,
+};
 
 export { Hello };
