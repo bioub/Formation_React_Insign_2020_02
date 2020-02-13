@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { Select } from "./Select";
 
@@ -14,13 +13,20 @@ class App extends Component {
     });
   };
   render() {
+    const { couleurs, couleurSelectionnee } = this.state;
     return (
       <div className="App">
         <Select
-          items={this.state.couleurs}
-          selected={this.state.couleurSelectionnee}
+          items={couleurs}
+          selected={couleurSelectionnee}
           onSelect={this.handleSelect}
         />
+        <Select
+          items={couleurs}
+          selected={couleurSelectionnee}
+          onSelect={this.handleSelect}
+        />
+        <p>Vous avez sélectionné : {couleurSelectionnee}</p>
       </div>
     );
   }
