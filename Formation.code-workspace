@@ -5,6 +5,15 @@
 		},
 		{
 			"path": "exercice-select"
+		},
+		{
+			"path": "todo-react-typescript"
+		},
+		{
+			"path": "todo-react"
+		},
+		{
+			"path": "hello-redux"
 		}
 	],
 	"settings": {}
