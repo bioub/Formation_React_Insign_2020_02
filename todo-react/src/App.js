@@ -27,6 +27,7 @@ class App extends Component {
 
   handleTodoAdd = todo => {
     this.setState({
+      newTodo: '',
       todos: [todo, ...this.state.todos]
     });
   };

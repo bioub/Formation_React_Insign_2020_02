@@ -8,7 +8,6 @@ function TodoForm({ newTodo, onTodoChange, onTodoAdd }) {
       title: newTodo,
       completed: false,
     });
-    onTodoChange('');
   }
 
   function handleChange(event) {
