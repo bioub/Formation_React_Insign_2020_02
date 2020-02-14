@@ -37,11 +37,11 @@ Reprendre le code de hello-redux dans index.js
 
 Prévoir des valeurs initiales (comme avec count)
 
-## Ecrire les reducers se basant sur les actions TODO_ADD, TODO_CHANGE
+## Ecrire le reducer se basant sur les actions TODO_ADD, TODO_CHANGE
 
 Créer les constantes TODO_ADD, TODO_CHANGE
 
-Dans le newTodoReducer, traiter TODO_CHANGE. L'action TODO_CHANGE ressemblera à :
+Traiter TODO_CHANGE. L'action TODO_CHANGE ressemblera à :
 
 ```
 {
@@ -50,7 +50,7 @@ Dans le newTodoReducer, traiter TODO_CHANGE. L'action TODO_CHANGE ressemblera à
 }
 ```
 
-Dans le todosReducer, traiter TODO_ADD. L'action TODO_ADD ressemblera à :
+Traiter TODO_ADD. L'action TODO_ADD ressemblera à :
 
 ```
 {
@@ -63,11 +63,9 @@ Dans le todosReducer, traiter TODO_ADD. L'action TODO_ADD ressemblera à :
 }
 ```
 
-Attention dans le todosReducer on manipule un tableau, il faut
-créer un nouveau tableau (changement immuable)
+Attention à penser à créer un nouveau state, et un nouveau tableau dans le cas de TODO_ADD (changement immuable)
 
-Avec l'extension Redux Devtools, tester via le bouton dispatch que les reducers
-fonctionnent
+Avec l'extension Redux Devtools, tester via le bouton dispatch que les reducer fonctionne
 
 ## Ecrire les versions connectées des composants TodoForm et TodoList
 
