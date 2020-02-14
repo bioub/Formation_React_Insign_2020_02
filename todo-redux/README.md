@@ -35,11 +35,6 @@ Le state devra avoir cette forme là
 
 Reprendre le code de hello-redux dans index.js
 
-Utiliser combineReducers pour pouvoir utiliser 2 reducers :
-
-* le premier qui s'occupe de la string newTodo
-* le premier qui s'occupe du tableau todos
-
 Prévoir des valeurs initiales (comme avec count)
 
 ## Ecrire les reducers se basant sur les actions TODO_ADD, TODO_CHANGE
