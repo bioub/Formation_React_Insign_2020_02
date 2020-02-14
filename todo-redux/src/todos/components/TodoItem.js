@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function TodoItem({ todo, onTodoDelete }) {
+function TodoItem({ todo = {}, onTodoDelete }) {
   return (
     <div className="TodoItem">
       <input type="checkbox" defaultChecked={todo.completed} />

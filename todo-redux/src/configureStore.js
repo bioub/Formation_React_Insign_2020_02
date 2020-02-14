@@ -1,7 +1,20 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  count: 0,
+  newTodo: 'Achet',
+  todos: [{
+    id: 1,
+    title: 'Acheter du pain',
+    completed: false,
+  }, {
+    id: 2,
+    title: 'Aller au sport',
+    completed: true,
+  }, {
+    id: 3,
+    title: 'Utiliser Redux',
+    completed: false,
+  }],
 };
 
 // Fonction pure
@@ -12,10 +25,15 @@ const initialState = {
 // au localStorage)
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case 'INCREMENT_COUNT':
+    case 'TODO_CHANGE':
       return {
         ...state, // pour conserver les anciennes valeurs
-        count: state.count + 1,
+        newTodo: action.payload
+      };
+      case 'TODO_ADD':
+      return {
+        ...state, // pour conserver les anciennes valeurs
+        // modifier todos de façon immuable
       };
     default:
       return state;

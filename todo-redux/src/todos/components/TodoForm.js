@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodoForm({ newTodo, onTodoChange, onTodoAdd }) {
+function TodoForm({ newTodo = '', onTodoChange, onTodoAdd }) {
   function handleSubmit(event) {
     event.preventDefault();
     onTodoAdd({
@@ -14,7 +14,6 @@ function TodoForm({ newTodo, onTodoChange, onTodoAdd }) {
   function handleChange(event) {
     onTodoChange(event.target.value);
   }
-
   return (
     <form className="TodoForm" onSubmit={handleSubmit}>
       <input value={newTodo} onChange={handleChange} />
