@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 function TodoForm({ newTodo = '', onTodoChange, onTodoAdd }) {
   function handleSubmit(event) {
@@ -27,21 +26,4 @@ function TodoForm({ newTodo = '', onTodoChange, onTodoAdd }) {
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    newTodo: state.newTodo
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    onTodoChange(payload) {
-      dispatch({ type: 'TODO_CHANGE', payload })
-    },
-    onTodoAdd(payload) {
-      dispatch({ type: 'TODO_ADD', payload })
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoForm);
+export default TodoForm;

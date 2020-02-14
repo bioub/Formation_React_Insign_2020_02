@@ -7,6 +7,7 @@ import { MultiStateButton, MultiStateButtonParent } from './MultiStateButton';
 import { HideableClock } from './HideableClock';
 import { ControlledCounter } from './ControlledCounter';
 import { UserForm } from './UserForm';
+import { Button } from './Button';
 
 function App() {
   const [nbPersonnes, setNbPersonnes] = useState(8);
@@ -24,6 +25,7 @@ function App() {
       <ControlledCounter count={nbPersonnes} onIncrement={() => setNbPersonnes(nbPersonnes + 1)} />
       <ControlledCounter count={i} onIncrement={() => setI(i + 1)} />
       <UserForm />
+      <Button>OK</Button>
     </div>
   );
 }

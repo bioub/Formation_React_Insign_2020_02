@@ -1,57 +1,36 @@
-import React, { Component } from "react";
-import TodoForm from "./todos/components/TodoForm";
-import TodoList from "./todos/components/TodoList";
+import React from "react";
+import { Route, Switch, Link } from "react-router-dom";
+import Home from "./Home";
+import Todos from "./Todos";
+import Hello from "./Hello";
+import Presentation from "./Presentation";
+import routes from "./routes";
 
-class App extends Component {
-  state = {
-    newTodo: "Achet",
-    todos: [
+function App() {
+  return (
+    <div className="App">
+      App
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/todos">Todos</Link>
+      </nav>
+      <Route path="/" component={Home} exact={true} />
+      <Route path="/todos" component={Todos} />
+      <Route path="/hello/:name" component={Hello} />
+      <Route path="/presentation" component={Presentation} />
       {
-        id: 123,
-        title: "Acheter du pain",
-        completed: false
-      },
-      {
-        id: 456,
-        title: "Utiliser React",
-        completed: true
+          routes.map((r) => <Route key={r.path} {...r} />)
       }
-    ]
-  };
-
-  handleTodoChange = newTodo => {
-    this.setState({
-      newTodo
-    });
-  };
-
-  handleTodoAdd = todo => {
-    this.setState({
-      newTodo: '',
-      todos: [todo, ...this.state.todos]
-    });
-  };
-
-  handleTodoDelete = todoToDelete => {
-    const i = this.state.todos.indexOf(todoToDelete);
-    this.setState({
-      todos: [...this.state.todos.slice(0, i), ...this.state.todos.slice(i + 1)]
-    });
-  };
-
-  render() {
-    const { newTodo, todos } = this.state;
-    return (
-      <div className="App">
-        <TodoForm
-          newTodo={newTodo}
-          onTodoChange={this.handleTodoChange}
-          onTodoAdd={this.handleTodoAdd}
-        />
-        <TodoList todos={todos} onTodoDelete={this.handleTodoDelete} />
-      </div>
-    );
-  }
+      
+      {/* <Route path="/hello/:name" >
+          <Hello />
+      </Route> */}
+      {/* <Switch>
+        <Route path="/todos" component={Todos} />
+        <Route path="/" component={Home} />
+       </Switch> */}
+    </div>
+  );
 }
 
 export default App;
